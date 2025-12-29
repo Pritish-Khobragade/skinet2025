@@ -44,7 +44,7 @@ namespace Infrastructure.Data
             };
 
 
-            return await query.ToListAsync();
+            return await query.Skip(5).Take(5).ToListAsync();
         }
 
         public async Task<Product?> GetProductByIdAsync(int id)

@@ -28,6 +28,11 @@ namespace Infrastructure.Data
                 query = query.Distinct();
             }
 
+            if(spec.isPagingEnabled)
+            {
+                
+            }
+
             return query;
         }
     
@@ -48,7 +53,7 @@ namespace Infrastructure.Data
             {
                 query = query.OrderByDescending(spec.OrderByDescending);
             }
-
+ 
             var selectQuery = query as IQueryable<TResult>;
 
             if(spec.Select != null)
